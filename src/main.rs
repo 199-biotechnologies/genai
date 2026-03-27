@@ -49,7 +49,7 @@ enum Commands {
     },
     /// List available AI models
     Models {
-        #[arg(long, name = "type")]
+        #[arg(long = "type")]
         media_type: Option<String>,
     },
     /// Machine-readable capability manifest
