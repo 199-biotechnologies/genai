@@ -9,11 +9,20 @@ genai video "ocean waves at sunset"
 
 ## Install
 
+### Homebrew (macOS/Linux)
+
+```bash
+brew tap 199-biotechnologies/tap
+brew install genai
+```
+
+### Cargo (crates.io)
+
 ```bash
 cargo install genai-media
 ```
 
-Or from source:
+### From source
 
 ```bash
 git clone https://github.com/199-biotechnologies/genai
