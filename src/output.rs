@@ -87,7 +87,9 @@ pub async fn download_file(
 }
 
 pub fn print_status(msg: &str) {
-    eprint!("\r\x1b[2K  {msg}");
+    if std::io::stderr().is_terminal() {
+        eprint!("\r\x1b[2K  {msg}");
+    }
 }
 
 pub fn print_success(output: &MediaOutput) {

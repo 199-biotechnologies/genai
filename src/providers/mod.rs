@@ -51,10 +51,10 @@ pub fn select_provider(explicit: Option<&str>) -> Result<ProviderKind, GenaiErro
             ))),
         };
     }
-    if std::env::var("FAL_KEY").is_ok() {
+    if std::env::var("FAL_KEY").ok().filter(|v| !v.is_empty()).is_some() {
         return Ok(ProviderKind::Fal);
     }
-    if std::env::var("OPENAI_API_KEY").is_ok() {
+    if std::env::var("OPENAI_API_KEY").ok().filter(|v| !v.is_empty()).is_some() {
         return Ok(ProviderKind::OpenAi);
     }
     Err(GenaiError::Config(
