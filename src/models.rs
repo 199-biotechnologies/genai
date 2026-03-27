@@ -12,13 +12,30 @@ pub struct ModelInfo {
 
 pub fn all_models() -> Vec<ModelInfo> {
     vec![
+        // ── fal.ai image models (latest as of March 2026) ───────────────
+        ModelInfo {
+            name: "nano-banana-2",
+            provider: "fal",
+            media_type: MediaType::Image,
+            model_id: "fal-ai/nano-banana-2",
+            description: "Nano Banana 2 (Google) — best quality, text rendering",
+            default: true,
+        },
+        ModelInfo {
+            name: "flux-2-pro",
+            provider: "fal",
+            media_type: MediaType::Image,
+            model_id: "fal-ai/flux-2-pro",
+            description: "FLUX 2 Pro — fast, high quality",
+            default: false,
+        },
         ModelInfo {
             name: "flux-pro",
             provider: "fal",
             media_type: MediaType::Image,
             model_id: "fal-ai/flux-pro/v1.1",
-            description: "FLUX Pro 1.1 — best quality general-purpose",
-            default: true,
+            description: "FLUX Pro 1.1 — general-purpose (legacy)",
+            default: false,
         },
         ModelInfo {
             name: "flux-dev",
@@ -36,13 +53,30 @@ pub fn all_models() -> Vec<ModelInfo> {
             description: "FLUX Schnell — fastest, lower quality",
             default: false,
         },
+        // ── fal.ai video models (latest as of March 2026) ───────────────
         ModelInfo {
             name: "kling-video",
             provider: "fal",
             media_type: MediaType::Video,
-            model_id: "fal-ai/kling-video/v2/master/text-to-video",
-            description: "Kling 2.0 Master — strong motion, 1080p",
+            model_id: "fal-ai/kling-video/v3/pro/text-to-video",
+            description: "Kling 3.0 Pro — cinematic motion, 1080p",
             default: true,
+        },
+        ModelInfo {
+            name: "veo3",
+            provider: "fal",
+            media_type: MediaType::Video,
+            model_id: "fal-ai/veo3.1/text-to-video",
+            description: "Veo 3.1 (Google) — highest quality, 4K",
+            default: false,
+        },
+        ModelInfo {
+            name: "ltx-video",
+            provider: "fal",
+            media_type: MediaType::Video,
+            model_id: "fal-ai/ltx-2/text-to-video",
+            description: "LTX Video 2.0 Pro — fast, affordable ($0.02)",
+            default: false,
         },
         ModelInfo {
             name: "minimax-video",
@@ -52,6 +86,7 @@ pub fn all_models() -> Vec<ModelInfo> {
             description: "Minimax — fast, good quality video",
             default: false,
         },
+        // ── OpenAI models ───────────────────────────────────────────────
         ModelInfo {
             name: "gpt-image-1",
             provider: "openai",
