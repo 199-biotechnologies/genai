@@ -1,2 +1,4 @@
 /target
 .claude/
+*.png
+*.mp4
